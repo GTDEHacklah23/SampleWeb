@@ -18,11 +18,16 @@ const cacheTime = process.env.ENVIROMENT === "dev" ? 0 : oneWeek;
 app.use("/asset", express.static("./web/assets", { maxAge: cacheTime }));
 
 import https from "https";
-import { getCertConfig } from "./util/getCertConfig";
+import { certConfig, getCertConfig } from "./util/getCertConfig";
 
-const httpsCerts = getCertConfig();
 const httpsPort = process.env.HTTPS_PORT || 443;
-https.createServer(httpsCerts, app).listen(httpsPort);
+let httpsCerts: certConfig = null!;
+try {
+  httpsCerts = getCertConfig();
+  https.createServer(httpsCerts, app).listen(httpsPort);
+} catch (e) {
+  console.warn("Could not start HTTPS, running in HTTP-only mode");
+}
 
 import http from "http";
 
