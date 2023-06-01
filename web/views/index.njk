@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Sample webpage</title>
+    <link rel="stylesheet" href="/asset/bundle.css" />
+    <script src="/asset/bundle.js"></script>
+  </head>
+
+  <body>
+    <h2>CSS Test</h2>
+    <p class="red-text">This text should be red</p>
+    <div class="blue-text">
+      <p>This text should be blue</p>
+      <p>This text should be blue</p>
+      <p>This text should be blue</p>
+    </div>
+
+    <h2>JS Test</h2>
+    <p>The text below should update every second</p>
+    <p id="tick"></p>
+
+    <h2>Templating Test</h2>
+    {% include "partials/examplePartial.njk" %}
+    <br />
+    {% include "partials/examplePartial.njk" %}
+    <br />
+    {% include "partials/examplePartial.njk" %}
+  </body>
+</html>

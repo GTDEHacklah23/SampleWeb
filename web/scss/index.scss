@@ -1,0 +1,11 @@
+@use "partials/partial";
+
+.red-text {
+  color: red;
+}
+
+.blue-text {
+  p {
+    color: blue;
+  }
+}
