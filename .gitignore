@@ -1,7 +1,7 @@
 node_modules
+cert
 
 dist
-webdist
 
 prod.env
 dev.env

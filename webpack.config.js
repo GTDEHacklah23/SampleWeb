@@ -5,7 +5,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.web.+\.ts$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "webdist"),
+    path: path.resolve(__dirname, "web", "assets"),
   },
   mode: "production",
 };
