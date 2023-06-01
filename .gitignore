@@ -1,0 +1,7 @@
+node_modules
+
+dist
+webdist
+
+prod.env
+dev.env
