@@ -23,5 +23,8 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "web", "assets"),
   },
-  mode: "production",
+  cache: {
+    type: "filesystem",
+  },
+  mode: "development",
 };
