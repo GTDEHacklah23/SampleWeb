@@ -23,10 +23,28 @@ Sample bare-bones frontend with relevant tooling
 # Running
 
 - `npm run start` - Starts the webserver
-
-## Development
-
 - `npm run watch` - Starts the webserver and restarts on changes
 - `npm run dev` - Rebuilts client-side files and starts the webserver
 
+# Development
 
+- Clone this repo using `git clone git@github.com:GTDEHacklah23/SampleWeb.git`
+- Install dependencies using `npm install`
+- Create a `dev.env` file with the following contents:
+
+```
+HTTP_PORT = 80
+HTTPS_PORT = 443
+KEY_PATH="path-to-certificates"
+ENVIROMENT = "dev"
+```
+
+> `KEY_PATH` is the path to the directory containing the `key.pem` and `cert.pem` files.
+> If it is not present, the server will only serve HTTP
+
+- Compile evertyhing using `npm run build`
+- Start the server using `npm start`
+
+Go to http://localhost:80 (HTTP) or https://localhost:443 (HTTPS) to see the site.
+
+When you are working on client-side code, you can use `npm run dev` instead to automatically rebuild the client-side code and restart the server.
