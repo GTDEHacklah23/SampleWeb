@@ -5,8 +5,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.web.+\.ts$/,
-        use: "ts-loader",
+        test: /\.ts$/,
+        use: {
+          loader: "ts-loader",
+          options: {
+            configFile: path.resolve(__dirname, "tsloader.json"),
+          },
+        },
         exclude: /node_modules/,
       },
     ],
