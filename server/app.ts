@@ -13,7 +13,9 @@ nunjucks.configure("./web/views", {
 
 const oneWeek = 1000 * 60 * 60 * 24 * 7;
 
-app.use("/asset", express.static("./web/assets", { maxAge: oneWeek }));
+const cacheTime = process.env.ENVIROMENT === "dev" ? 0 : oneWeek;
+
+app.use("/asset", express.static("./web/assets", { maxAge: cacheTime }));
 
 import https from "https";
 import { getCertConfig } from "./util/getCertConfig";
