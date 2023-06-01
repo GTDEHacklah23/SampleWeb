@@ -4,14 +4,14 @@
   "description": "Sample bare-bones frontend",
   "main": "dist/index.js",
   "scripts": {
-    "build-css": "npx sass web/scss/index.scss web/assets/css/bundle.css",
+    "build-css": "npx sass --no-source-map web/scss/index.scss web/assets/bundle.css",
     "build-tsc": "npx tsc",
     "build-pack": "npx webpack --config webpack.config.js",
     "build": "npm run build-css && npm run build-tsc && npm run build-pack",
     "build-dev": "npm run build-css && npm run build-pack",
-    "start": "npm run build-all && node dist/index.js",
+    "start": "node dist/index.js",
     "dev": "npm run build-dev && node dist/index.js",
-    "watch": "npx nodemon --delay 2"
+    "watch": "npx nodemon"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,7 @@
       "web"
     ],
     "ext": "ts,njk,scss",
-    "exec": "npm run dev"
+    "exec": "npm run dev",
+    "delay": 3000
   }
 }
